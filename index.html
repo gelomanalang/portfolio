@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Marc Angelo Manalang — Frontend Developer</title>
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="description" content="Frontend developer with more than 10 years of experience creating clean, effective HTML and web content that is user-friendly, responsive, and blends structure with creativity.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -66,7 +67,7 @@
   .masthead nav a:hover{color:var(--bone);border-bottom-color:var(--amber)}
 
   /* ---------- hero ---------- */
-  .hero{padding:clamp(60px,11vw,140px) 0 clamp(48px,7vw,88px);border-top:0}
+  .hero{padding:clamp(60px,11vw,140px) 0 clamp(56px,9vw,110px);border-top:0}
   .hero h1{
     font-family:var(--display);font-weight:800;
     font-stretch:118%;font-variation-settings:'wdth' 118;
@@ -98,14 +99,13 @@
     max-width:58ch;font-size:clamp(15px,2vw,18px);color:#C9CFC6;
     margin:0 0 clamp(28px,4vw,38px);
   }
-  .status{
-    display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);
-    font-size:12px;color:var(--bone);border:1px solid var(--line);
-    background:var(--petrol-2);border-radius:999px;padding:7px 14px;
+  .lede-2{
+    position:relative;max-width:52ch;margin-bottom:0;padding-top:20px;
+    color:var(--amber);font-weight:500;font-size:clamp(16px,2.1vw,20px);
   }
-  .dot{width:7px;height:7px;border-radius:50%;background:var(--add);flex:none}
-  .status-row{display:flex;flex-wrap:wrap;gap:10px}
-  .status-award{color:var(--amber);border-color:rgba(240,179,65,.45)}
+  .lede-2::before{
+    content:"";position:absolute;top:0;left:0;width:42px;height:2px;background:var(--amber);
+  }
 
   .company{
     font-family:var(--mono);font-size:clamp(13px,1.7vw,15px);color:var(--amber);
@@ -138,18 +138,14 @@
     transition:border-color .22s ease,transform .22s ease;
   }
   .skill:hover{border-color:var(--amber);transform:translateY(-3px)}
-  .logo{
-    width:46px;height:46px;flex:none;border-radius:10px;
-    background:rgba(233,228,214,.07);display:grid;place-items:center;
-  }
-  .logo img{width:28px;height:28px;object-fit:contain;display:block}
   .monotile{
     width:46px;height:46px;flex:none;border-radius:10px;display:grid;place-items:center;
-    font-family:var(--mono);font-weight:600;font-size:14px;color:#fff;letter-spacing:.02em;
+    font-family:var(--mono);font-weight:600;font-size:15px;color:#fff;letter-spacing:.02em;
+    box-shadow:inset 0 0 0 1px rgba(255,255,255,.16);
   }
+  .mono-us{font-size:19px;align-content:start;padding-top:11px}
   .skill-name{font-family:var(--mono);font-size:13.5px;font-weight:500;color:var(--bone)}
   .skill-note{font-size:13px;line-height:1.45;color:var(--mute);margin:0}
-  .trademark{font-family:var(--mono);font-size:11px;color:var(--mute);margin:26px 0 0}
 
   /* ---------- releases ---------- */
   .releases-grid{display:grid;grid-template-columns:150px 1fr;gap:clamp(24px,5vw,64px)}
@@ -211,12 +207,6 @@
   .links a:hover{border-bottom-color:var(--amber)}
   .links a::after{content:" ↗";color:var(--mute)}
 
-  /* ---------- about ---------- */
-  .about-grid{display:grid;grid-template-columns:150px 1fr;gap:clamp(24px,5vw,64px)}
-  .about-body{max-width:62ch}
-  .about-body p{margin:0 0 18px;font-size:clamp(15px,1.9vw,17.5px);color:#C9D0C7}
-  .about-body p:last-child{margin-bottom:0}
-  .about-body b{color:var(--bone);font-weight:500}
 
   /* ---------- contact ---------- */
   .contact h2{
@@ -235,6 +225,53 @@
     font-size:11px;color:var(--mute);border-top:1px solid var(--line);padding-top:20px;
   }
 
+  /* ---------- showcase ---------- */
+  .videos{
+    list-style:none;margin:0;padding:0;display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(268px,1fr));gap:clamp(18px,2.6vw,28px);
+  }
+  .vid-frame{
+    display:block;width:100%;aspect-ratio:16/9;padding:0;margin:0 0 12px;
+    background:var(--petrol-2);border:1px solid var(--line);border-radius:6px;
+    overflow:hidden;position:relative;cursor:pointer;color:inherit;
+    background-size:cover;background-position:center;
+    transition:border-color .22s ease,transform .22s ease;
+  }
+  .vid-frame:hover{border-color:var(--amber);transform:translateY(-3px)}
+  .vid-play{
+    position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+    width:52px;height:52px;border-radius:50%;background:rgba(12,29,33,.78);
+    border:1px solid rgba(233,228,214,.5);display:grid;place-items:center;
+    transition:background .22s ease;
+  }
+  .vid-frame:hover .vid-play{background:var(--amber)}
+  .vid-play::after{
+    content:"";width:0;height:0;margin-left:3px;
+    border-left:13px solid var(--bone);border-top:8px solid transparent;border-bottom:8px solid transparent;
+  }
+  .vid-frame:hover .vid-play::after{border-left-color:var(--petrol)}
+  .vid-frame iframe{width:100%;height:100%;border:0;display:block}
+  .vid-title{font-family:var(--mono);font-size:13.5px;margin:0}
+  .vid-title a{
+    color:var(--bone);text-decoration:none;
+    border-bottom:1px solid transparent;padding-bottom:2px;transition:border-color .2s;
+  }
+  .vid-title a:hover{border-bottom-color:var(--amber)}
+  .vid-title a::after{content:" ↗";color:var(--mute)}
+
+  /* ---------- awards ---------- */
+  .awards{list-style:none;margin:0;padding:0;max-width:760px}
+  .awards li{
+    display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 20px;
+    padding:15px 0;border-bottom:1px solid var(--line);
+  }
+  .awards li:first-child{border-top:1px solid var(--line)}
+  .awards .yr{
+    font-family:var(--mono);font-size:12.5px;color:var(--amber);flex:none;width:52px;
+  }
+  .awards .what{font-size:clamp(15px,2vw,17px);color:var(--bone)}
+  .awards .who{font-family:var(--mono);font-size:12px;color:var(--mute);margin-left:auto}
+
   /* ---------- motion ---------- */
   .rise{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
   .rise.shown{opacity:1;transform:none}
@@ -244,12 +281,13 @@
   @keyframes slidein{from{opacity:0;transform:translateX(-10px)}to{opacity:1;transform:none}}
 
   @media (max-width:860px){
-    .releases-grid,.about-grid{grid-template-columns:1fr;gap:26px}
+    .releases-grid{grid-template-columns:1fr;gap:26px}
     .spine{position:static}
     .spine ol{display:flex;gap:16px;overflow-x:auto;border-left:0;border-top:1px solid var(--line);padding-top:16px}
     .spine li{padding:0 0 0 14px;flex:none}
     .spine li::before{left:0;top:6px}
-    .masthead nav a:nth-child(3){display:none}
+    .masthead nav{gap:12px}
+    .masthead nav a{font-size:11px}
   }
   @media (prefers-reduced-motion:reduce){
     html{scroll-behavior:auto}
@@ -267,8 +305,8 @@
     <nav>
       <a href="#stack">Stack</a>
       <a href="#work">Work</a>
-      <a href="#education">Education</a>
-      <a href="#about">About</a>
+      <a href="#awards">Awards</a>
+      <a href="#showcase">Showcase</a>
       <a href="#contact">Contact</a>
     </nav>
   </div>
@@ -280,19 +318,16 @@
   <section class="wrap hero band">
     <p class="eyebrow">Changelog — frontend development</p>
     <h1>Marc Angelo<br>Manalang</h1>
-    <p class="role">frontend developer &nbsp;/&nbsp; <b>10+ years</b> &nbsp;/&nbsp; clean HTML, responsive web content</p>
+    <p class="role">frontend developer &nbsp;/&nbsp; <b>10+ years</b> &nbsp;/&nbsp; responsive web content</p>
 
     <div class="diff">
       <p class="out"><span class="sign">−</span><span class="txt">screens that only work in the mockup</span></p>
       <p class="in"><span class="sign">+</span><span class="txt">interfaces that hold up in the browser</span></p>
     </div>
 
-    <p class="lede">More than 10 years specializing in clean, effective HTML and web content. I build user-friendly, responsive work that blends structure with creativity.</p>
+    <p class="lede">A frontend developer with more than 10 years of experience specializing in creating clean, effective HTML and web contents. Love to build user-friendly, responsive contents that blend structure with creativity.</p>
+    <p class="lede lede-2">Proven success through creativity, logical reasoning, and passion.</p>
 
-    <div class="status-row">
-      <span class="status"><span class="dot"></span>Open to frontend roles and contract work</span>
-      <span class="status status-award">★ WalkMe Top 100 DAP Professionals, 2022</span>
-    </div>
   </section>
 
   <!-- STACK — logo thumbnails -->
@@ -302,84 +337,72 @@
       <ul class="skills">
 
         <li class="skill">
-          <span class="logo"><img alt="HTML5 logo" loading="lazy" data-mono="H5" data-color="#E44D26"
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"></span>
+          <span class="monotile" role="img" aria-label="HTML5 logo" style="background:#E44D26">H5</span>
           <span class="skill-name">HTML5</span>
           <p class="skill-note">Semantic structure and accessible markup as the starting point, not the cleanup.</p>
         </li>
 
         <li class="skill">
-          <span class="logo"><img alt="CSS3 logo" loading="lazy" data-mono="C3" data-color="#1572B6"
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg"></span>
+          <span class="monotile" role="img" aria-label="CSS3 logo" style="background:#1572B6">C3</span>
           <span class="skill-name">CSS3</span>
           <p class="skill-note">Responsive layout, animation, and design systems that stay predictable as they grow.</p>
         </li>
 
         <li class="skill">
-          <span class="logo"><img alt="JavaScript logo" loading="lazy" data-mono="JS" data-color="#F7DF1E"
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"></span>
+          <span class="monotile" role="img" aria-label="JavaScript logo" style="background:#B8A400">JS</span>
           <span class="skill-name">JavaScript</span>
           <p class="skill-note">The through-line for everything else here — plain ES first, libraries only when they earn it.</p>
         </li>
 
         <li class="skill">
-          <span class="logo"><img alt="jQuery logo" loading="lazy" data-mono="jQ" data-color="#0769AD"
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jquery/jquery-original.svg"></span>
+          <span class="monotile" role="img" aria-label="jQuery logo" style="background:#0769AD">jQ</span>
           <span class="skill-name">jQuery</span>
           <p class="skill-note">Comfortable in the long-lived codebases that still run on it, and in migrating them out.</p>
         </li>
 
         <li class="skill">
-          <span class="logo"><img alt="WalkMe logo" loading="lazy" data-mono="WM" data-color="#4A3AFF"
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/walkme/walkme-original.svg"></span>
+          <span class="monotile" role="img" aria-label="WalkMe logo" style="background:#0094D4">WM</span>
           <span class="skill-name">WalkMe</span>
           <p class="skill-note">In-app walkthroughs, onboarding flows, and custom JavaScript inside the platform.</p>
         </li>
 
         <li class="skill">
-          <span class="logo"><img alt="Phaser logo" loading="lazy" data-mono="PH" data-color="#8ED2EC"
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/phaser/phaser-original.svg"></span>
+          <span class="monotile" role="img" aria-label="Phaser logo" style="background:#2E7FA8">PH</span>
           <span class="skill-name">Phaser.js</span>
           <p class="skill-note">Browser games and interactive canvas work — sprites, scenes, physics, input.</p>
         </li>
 
         <li class="skill">
-          <span class="logo"><img alt="Node.js logo" loading="lazy" data-mono="ND" data-color="#539E43"
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg"></span>
+          <span class="monotile" role="img" aria-label="Node.js logo" style="background:#539E43">ND</span>
           <span class="skill-name">Node.js</span>
           <p class="skill-note">Build tooling, local dev servers, and small APIs behind the front end.</p>
         </li>
 
         <li class="skill">
-          <span class="logo"><img alt="Zepto.js logo" loading="lazy" data-mono="ZP" data-color="#D93B3B"
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/zeptojs/zeptojs-original.svg"></span>
+          <span class="monotile" role="img" aria-label="Zepto.js logo" style="background:#C93A3A">ZP</span>
           <span class="skill-name">ZeptoJS</span>
           <p class="skill-note">jQuery-compatible API at a fraction of the weight, for mobile-first builds.</p>
         </li>
 
         <li class="skill">
-          <span class="logo"><img alt="Underscore.js logo" loading="lazy" data-mono="_" data-color="#0E76BC"
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/underscorejs/underscorejs-original.svg"></span>
+          <span class="monotile mono-us" role="img" aria-label="Underscore.js logo" style="background:#0E76BC">_</span>
           <span class="skill-name">Underscore.js</span>
           <p class="skill-note">Data shaping and templating — the utility belt under a lot of Backbone work.</p>
         </li>
 
         <li class="skill">
-          <span class="logo"><img alt="Backbone.js logo" loading="lazy" data-mono="BB" data-color="#0071B5"
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/backbonejs/backbonejs-original.svg"></span>
+          <span class="monotile" role="img" aria-label="Backbone.js logo" style="background:#0071B5">BB</span>
           <span class="skill-name">Backbone.js</span>
           <p class="skill-note">Models, views, and routing in applications that have been running for years.</p>
         </li>
 
         <li class="skill">
-          <span class="logo"><img alt="Claude logo" loading="lazy" data-mono="CC" data-color="#D97757"
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/claude/claude-original.svg"></span>
+          <span class="monotile" role="img" aria-label="Claude logo" style="background:#C15F3C">CC</span>
           <span class="skill-name">Claude Code</span>
           <p class="skill-note">Refactors, test coverage, and repetitive migration work — reviewed line by line.</p>
         </li>
 
       </ul>
-      <p class="trademark">Logos shown are trademarks of their respective owners and appear here to identify the technology only.</p>
     </div>
   </section>
 
@@ -498,6 +521,22 @@
     </div>
   </section>
 
+  <!-- AWARDS -->
+  <section class="band" id="awards">
+    <div class="wrap">
+      <p class="eyebrow">Achievements</p>
+      <ul class="awards">
+        <li><span class="yr">2022</span><span class="what">WalkMe's Top 100 DAP Professionals</span><span class="who">Arcadis</span></li>
+        <li><span class="yr">2018</span><span class="what">Bulletproof Award</span><span class="who">Accenture</span></li>
+        <li><span class="yr">2016</span><span class="what">Promoted to Subject-Matter Expert</span><span class="who">Accenture</span></li>
+        <li><span class="yr">2016</span><span class="what">Perfect Attendance and Punctuality</span><span class="who">Accenture</span></li>
+        <li><span class="yr">2015</span><span class="what">Promoted to Senior HTML5 Creative Developer</span><span class="who">Wide-Out</span></li>
+        <li><span class="yr">2015</span><span class="what">Rookie of the Year</span><span class="who">Wide-Out</span></li>
+        <li><span class="yr">2014</span><span class="what">Quality Delivery Award</span><span class="who">Infor PSSC</span></li>
+      </ul>
+    </div>
+  </section>
+
   <!-- EDUCATION & THESIS -->
   <section class="band" id="education">
     <div class="wrap">
@@ -523,14 +562,64 @@
     </div>
   </section>
 
-  <!-- ABOUT -->
-  <section class="band" id="about">
-    <div class="wrap about-grid">
-      <p class="eyebrow">About</p>
-      <div class="about-body">
-        <p>A frontend developer with <b>more than 10 years of experience</b> specializing in creating clean, effective HTML and web contents. Love to build user-friendly, responsive contents that blend structure with creativity.</p>
-        <p>Proven success through creativity, logical reasoning, and passion.</p>
-      </div>
+  <!-- SHOWCASE -->
+  <section class="band" id="showcase">
+    <div class="wrap">
+      <p class="eyebrow">Showcase — selected video work</p>
+      <ul class="videos">
+        <li>
+          <button class="vid-frame" data-yt="tF1LMxPdhWY" type="button" aria-label="Play Interactive Ads #1"></button>
+          <p class="vid-title"><a href="https://youtu.be/tF1LMxPdhWY" target="_blank" rel="noopener">Interactive Ads #1</a></p>
+        </li>
+        <li>
+          <button class="vid-frame" data-yt="NZnZ1KAEMgM" type="button" aria-label="Play Interactive Ads #2"></button>
+          <p class="vid-title"><a href="https://youtu.be/NZnZ1KAEMgM" target="_blank" rel="noopener">Interactive Ads #2</a></p>
+        </li>
+        <li>
+          <button class="vid-frame" data-yt="7DXk2mswEpA" type="button" aria-label="Play Interactive Ads #3"></button>
+          <p class="vid-title"><a href="https://youtu.be/7DXk2mswEpA" target="_blank" rel="noopener">Interactive Ads #3</a></p>
+        </li>
+        <li>
+          <button class="vid-frame" data-yt="-APZZNkvbJ4" type="button" aria-label="Play Banner Ads"></button>
+          <p class="vid-title"><a href="https://youtu.be/-APZZNkvbJ4" target="_blank" rel="noopener">Banner Ads</a></p>
+        </li>
+        <li>
+          <button class="vid-frame" data-yt="iKyIVPA76dY" type="button" aria-label="Play Playable Ads #1"></button>
+          <p class="vid-title"><a href="https://youtu.be/iKyIVPA76dY" target="_blank" rel="noopener">Playable Ads #1</a></p>
+        </li>
+        <li>
+          <button class="vid-frame" data-yt="GjvtxcNtC-E" type="button" aria-label="Play Playable Ads #2"></button>
+          <p class="vid-title"><a href="https://youtu.be/GjvtxcNtC-E" target="_blank" rel="noopener">Playable Ads #2</a></p>
+        </li>
+        <li>
+          <button class="vid-frame" data-yt="87rTc9Xsg78" type="button" aria-label="Play Playable Ads #3"></button>
+          <p class="vid-title"><a href="https://youtu.be/87rTc9Xsg78" target="_blank" rel="noopener">Playable Ads #3</a></p>
+        </li>
+        <li>
+          <button class="vid-frame" data-yt="WoiEijtSdmk" type="button" aria-label="Play Playable Ads #4"></button>
+          <p class="vid-title"><a href="https://youtu.be/WoiEijtSdmk" target="_blank" rel="noopener">Playable Ads #4</a></p>
+        </li>
+        <li>
+          <button class="vid-frame" data-yt="S1FgAId3828" type="button" aria-label="Play Playable Ads #5"></button>
+          <p class="vid-title"><a href="https://youtu.be/S1FgAId3828" target="_blank" rel="noopener">Playable Ads #5</a></p>
+        </li>
+        <li>
+          <button class="vid-frame" data-yt="-2rZIl1zHAI" type="button" aria-label="Play Playable Ads #6"></button>
+          <p class="vid-title"><a href="https://youtu.be/-2rZIl1zHAI" target="_blank" rel="noopener">Playable Ads #6</a></p>
+        </li>
+        <li>
+          <button class="vid-frame" data-yt="d11A-kRbojg" type="button" aria-label="Play Playable Ads #7"></button>
+          <p class="vid-title"><a href="https://youtu.be/d11A-kRbojg" target="_blank" rel="noopener">Playable Ads #7</a></p>
+        </li>
+        <li>
+          <button class="vid-frame" data-yt="LNhz2u_sYAo" type="button" aria-label="Play WalkMe Digital Adoption Platform #1"></button>
+          <p class="vid-title"><a href="https://youtu.be/LNhz2u_sYAo" target="_blank" rel="noopener">WalkMe Digital Adoption Platform #1</a></p>
+        </li>
+        <li>
+          <button class="vid-frame" data-yt="5KIFMeivtA8" type="button" aria-label="Play WalkMe Digital Adoption Platform #2"></button>
+          <p class="vid-title"><a href="https://youtu.be/5KIFMeivtA8" target="_blank" rel="noopener">WalkMe Digital Adoption Platform #2</a></p>
+        </li>
+      </ul>
     </div>
   </section>
 
@@ -545,7 +634,6 @@
       </div>
       <div class="colophon">
         <span>© 2026 Marc Angelo Manalang</span>
-        <span>Set in Archivo &amp; IBM Plex</span>
       </div>
     </div>
   </section>
@@ -556,16 +644,27 @@
 (function(){
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  // Any logo that fails to load becomes a lettermark tile in the brand colour
-  document.querySelectorAll('.logo img').forEach(function(img){
-    img.addEventListener('error', function(){
-      var tile = document.createElement('span');
-      tile.className = 'monotile';
-      tile.textContent = img.dataset.mono || '?';
-      tile.style.background = img.dataset.color || '#20464D';
-      tile.setAttribute('aria-label', img.alt);
-      tile.setAttribute('role', 'img');
-      if (img.parentNode) { img.parentNode.replaceWith(tile); }
+  // Video slots: show the YouTube thumbnail, swap in the player on click
+  document.querySelectorAll('.vid-frame').forEach(function(btn){
+    var id = btn.dataset.yt || '';
+    if (!id) return;
+    btn.innerHTML = '<span class="vid-play"></span>';
+    btn.style.backgroundImage = 'url(https://i.ytimg.com/vi/' + id + '/hqdefault.jpg)';
+    btn.setAttribute('aria-label', 'Play video');
+    btn.addEventListener('click', function(){
+      // Opened straight from the filesystem? No referrer exists, so the embed
+      // would fail with error 153 — send the viewer to YouTube instead.
+      if (location.protocol === 'file:') {
+        window.open('https://www.youtube.com/watch?v=' + id, '_blank', 'noopener');
+        return;
+      }
+      var f = document.createElement('iframe');
+      f.src = 'https://www.youtube.com/embed/' + id + '?autoplay=1&rel=0&playsinline=1';
+      f.allow = 'accelerometer; autoplay; encrypted-media; picture-in-picture';
+      f.referrerPolicy = 'strict-origin-when-cross-origin';
+      f.allowFullscreen = true;
+      f.title = 'YouTube video player';
+      btn.replaceWith(f);
     });
   });
 

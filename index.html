@@ -6,13 +6,13 @@
 <title>Marc Angelo Manalang — Frontend Developer</title>
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="description" content="Frontend developer with more than 10 years of experience creating clean, effective HTML and web content that is user-friendly, responsive, and blends structure with creativity.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta name="theme-color" content="#0C1D21">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
     --petrol:#0C1D21;
@@ -26,13 +26,13 @@
     --display:'Archivo',system-ui,sans-serif;
     --body:'IBM Plex Sans',system-ui,sans-serif;
     --mono:'IBM Plex Mono',ui-monospace,monospace;
-    --gut:clamp(20px,5vw,64px);
+    --gut:clamp(26px,5vw,64px);
   }
 
   *{box-sizing:border-box}
-  html{scroll-behavior:smooth}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
   body{
-    margin:0;background:var(--petrol);color:var(--bone);
+    margin:0;background:var(--petrol);color:var(--bone);overflow-x:hidden;
     font-family:var(--body);font-size:16px;line-height:1.6;
     -webkit-font-smoothing:antialiased;
   }
@@ -41,7 +41,8 @@
   :focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:2px}
 
   .wrap{max-width:1180px;margin:0 auto;padding:0 var(--gut)}
-  .band{padding:clamp(56px,9vw,110px) 0;border-top:1px solid var(--line)}
+  .band{padding:clamp(52px,9vw,110px) 0;border-top:1px solid var(--line)}
+  section[id]{scroll-margin-top:74px}
 
   .eyebrow{
     font-family:var(--mono);font-size:11px;letter-spacing:.18em;
@@ -58,20 +59,25 @@
     font-family:var(--mono);font-weight:600;font-size:13px;letter-spacing:.1em;
     text-decoration:none;white-space:nowrap;
   }
-  .mark span{color:var(--amber)}
+  .mark .d{color:var(--amber)}
+  .mark-short{display:none}
   .ver{
     font-family:var(--mono);font-size:11px;color:var(--amber);
     border:1px solid var(--line);border-radius:999px;padding:3px 10px;
   }
-  .masthead nav{margin-left:auto;display:flex;gap:clamp(14px,3vw,30px)}
+  .masthead nav{
+    margin-left:auto;display:flex;gap:clamp(14px,3vw,30px);
+    overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none;
+  }
+  .masthead nav::-webkit-scrollbar{display:none}
   .masthead nav a{
-    font-family:var(--mono);font-size:12px;color:var(--mute);
-    text-decoration:none;padding-bottom:2px;border-bottom:1px solid transparent;
+    font-family:var(--mono);font-size:12px;color:var(--mute);white-space:nowrap;
+    text-decoration:none;padding:6px 0 4px;border-bottom:1px solid transparent;
   }
   .masthead nav a:hover{color:var(--bone);border-bottom-color:var(--amber)}
 
   /* ---------- hero ---------- */
-  .hero{padding:clamp(60px,11vw,140px) 0 clamp(56px,9vw,110px);border-top:0}
+  .hero{padding:clamp(60px,11vw,140px) var(--gut) clamp(56px,9vw,110px);border-top:0}
   .hero h1{
     font-family:var(--display);font-weight:800;
     font-stretch:118%;font-variation-settings:'wdth' 118;
@@ -90,7 +96,7 @@
   }
   .diff p{
     font-family:var(--mono);font-weight:500;
-    font-size:clamp(15px,3.1vw,30px);line-height:1.35;margin:0 0 6px;
+    font-size:clamp(17px,4.2vw,30px);line-height:1.35;margin:0 0 8px;
     display:flex;gap:.7em;align-items:baseline;
   }
   .diff p:last-child{margin-bottom:0}
@@ -141,7 +147,6 @@
     padding:16px 16px 18px;display:flex;flex-direction:column;gap:11px;
     transition:border-color .22s ease,transform .22s ease;
   }
-  .skill:hover{border-color:var(--amber);transform:translateY(-3px)}
   .monotile{
     width:46px;height:46px;flex:none;border-radius:10px;display:grid;place-items:center;
     font-family:var(--mono);font-weight:600;font-size:15px;color:#fff;letter-spacing:.02em;
@@ -150,6 +155,15 @@
   .mono-us{font-size:19px;align-content:start;padding-top:11px}
   .skill-name{font-family:var(--mono);font-size:13.5px;font-weight:500;color:var(--bone)}
   .skill-note{font-size:13px;line-height:1.45;color:var(--mute);margin:0}
+
+
+  /* pointer devices only — stops hover sticking after a tap */
+  @media (hover:hover){
+    .skill:hover{border-color:var(--amber);transform:translateY(-3px)}
+    .vid-frame:hover{border-color:var(--amber);transform:translateY(-3px)}
+    .vid-frame:hover .vid-play{background:var(--amber)}
+    .vid-frame:hover .vid-play::after{border-left-color:var(--petrol)}
+  }
 
   /* ---------- releases ---------- */
   .releases-grid{display:grid;grid-template-columns:150px 1fr;gap:clamp(24px,5vw,64px)}
@@ -220,7 +234,7 @@
   }
   .contact-links{display:flex;flex-wrap:wrap;gap:12px 26px;margin-bottom:44px}
   .contact-links a{
-    font-family:var(--mono);font-size:clamp(13px,1.8vw,15px);text-decoration:none;
+    overflow-wrap:anywhere;font-family:var(--mono);font-size:clamp(13px,1.8vw,15px);text-decoration:none;
     border-bottom:1px solid var(--line);padding-bottom:3px;
   }
   .contact-links a:hover{border-bottom-color:var(--amber)}
@@ -241,21 +255,19 @@
     background-size:cover;background-position:center;
     transition:border-color .22s ease,transform .22s ease;
   }
-  .vid-frame:hover{border-color:var(--amber);transform:translateY(-3px)}
   .vid-play{
     position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
     width:52px;height:52px;border-radius:50%;background:rgba(12,29,33,.78);
     border:1px solid rgba(233,228,214,.5);display:grid;place-items:center;
     transition:background .22s ease;
   }
-  .vid-frame:hover .vid-play{background:var(--amber)}
   .vid-play::after{
     content:"";width:0;height:0;margin-left:3px;
     border-left:13px solid var(--bone);border-top:8px solid transparent;border-bottom:8px solid transparent;
   }
-  .vid-frame:hover .vid-play::after{border-left-color:var(--petrol)}
   .vid-frame iframe{width:100%;height:100%;border:0;display:block}
   .vid-title{font-family:var(--mono);font-size:13.5px;margin:0}
+  .vid-title{overflow-wrap:anywhere}
   .vid-title a{
     color:var(--bone);text-decoration:none;
     border-bottom:1px solid transparent;padding-bottom:2px;transition:border-color .2s;
@@ -284,15 +296,75 @@
   .diff p:nth-child(2){animation-delay:.30s}
   @keyframes slidein{from{opacity:0;transform:translateX(-10px)}to{opacity:1;transform:none}}
 
-  @media (max-width:860px){
-    .releases-grid{grid-template-columns:1fr;gap:26px}
-    .spine{position:static}
-    .spine ol{display:flex;gap:16px;overflow-x:auto;border-left:0;border-top:1px solid var(--line);padding-top:16px}
-    .spine li{padding:0 0 0 14px;flex:none}
-    .spine li::before{left:0;top:6px}
-    .masthead nav{gap:12px}
-    .masthead nav a{font-size:11px}
+  /* large screens: let the grid breathe rather than stretch */
+  @media (min-width:1500px){
+    .wrap{max-width:1320px}
+    .videos{grid-template-columns:repeat(4,1fr)}
   }
+
+  /* tablet */
+  @media (max-width:860px){
+    .releases-grid{grid-template-columns:1fr;gap:0}
+    .spine{position:static}
+    .spine ol{display:none}          /* each entry already carries its own version tag */
+    .spine .eyebrow{margin-bottom:26px}
+    .videos{grid-template-columns:repeat(2,1fr)}
+    .masthead nav{gap:15px}
+    .masthead nav a{font-size:11.5px}
+  }
+  /* phone */
+  @media (max-width:700px){
+    .masthead-in{height:54px;gap:14px}
+    .mark-long{display:none}
+    .mark-short{display:inline}
+    .ver{display:none}
+    .masthead nav{gap:13px}
+    .masthead nav a{font-size:11px}
+    section[id]{scroll-margin-top:64px}
+
+    .hero{padding-top:clamp(44px,9vw,70px)}
+    .role{margin-bottom:26px}
+    .lede{font-size:15.5px;margin-bottom:22px}
+
+    .skills{grid-template-columns:repeat(2,1fr);gap:10px}
+    .skill{padding:14px;gap:9px}
+    .monotile{width:40px;height:40px;font-size:13px}
+    .skill-name{font-size:12.5px}
+
+    .release h3{font-size:21px}
+    .company{font-size:12.5px;margin-bottom:16px}
+    .release{padding-bottom:42px}
+    .changes{font-size:12.5px}
+    .builtwith,.links{gap:7px}
+    .chip{font-size:11px;padding:4px 9px}
+    .release-head{gap:6px 10px}
+
+    .awards li{gap:2px 14px;padding:13px 0}
+    .awards .yr{width:44px}
+    .awards .what{font-size:15px}
+    .awards .who{margin-left:0;width:100%;padding-left:58px}
+
+    .edu-degree{display:block}
+    .edu-degree .where{display:block;margin-top:8px}
+
+    .videos{grid-template-columns:1fr;gap:20px}
+    .contact h2{font-size:clamp(32px,11vw,52px)}
+  }
+
+  /* very small phones */
+  @media (pointer:coarse){
+    .links a,.contact-links a,.vid-title a{padding-top:6px;padding-bottom:6px;display:inline-block}
+    .spine a{padding:4px 0}
+  }
+
+  @media (max-width:370px){
+    .masthead nav{gap:11px}
+    .masthead nav a{font-size:10.5px}
+    .skills{grid-template-columns:1fr}
+    .diff{padding-left:12px}
+    .awards .who{padding-left:0}
+  }
+
   @media (prefers-reduced-motion:reduce){
     html{scroll-behavior:auto}
     *,*::before,*::after{animation:none!important;transition:none!important}
@@ -304,7 +376,7 @@
 
 <header class="masthead">
   <div class="wrap masthead-in">
-    <a class="mark" href="#top">MARC<span>.</span>MANALANG</a>
+    <a class="mark" href="#top"><span class="mark-long">MARC<span class="d">.</span>MANALANG</span><span class="mark-short">M<span class="d">.</span>M</span></a>
     <span class="ver">v2026.8</span>
     <nav>
       <a href="#stack">Stack</a>

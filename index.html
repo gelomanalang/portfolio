@@ -28,7 +28,6 @@
     --mono:'IBM Plex Mono',ui-monospace,monospace;
     --gut:clamp(26px,5vw,64px);
   }
-
   *{box-sizing:border-box}
   html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
   body{
@@ -39,16 +38,13 @@
   a{color:inherit}
   ::selection{background:var(--amber);color:var(--petrol)}
   :focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:2px}
-
   .wrap{max-width:1180px;margin:0 auto;padding:0 var(--gut)}
   .band{padding:clamp(52px,9vw,110px) 0;border-top:1px solid var(--line)}
   section[id]{scroll-margin-top:74px}
-
   .eyebrow{
     font-family:var(--mono);font-size:11px;letter-spacing:.18em;
     text-transform:uppercase;color:var(--mute);margin:0 0 22px;
   }
-
   /* ---------- masthead ---------- */
   .masthead{
     position:sticky;top:0;z-index:40;background:rgba(12,29,33,.86);
@@ -75,7 +71,6 @@
     text-decoration:none;padding:6px 0 4px;border-bottom:1px solid transparent;
   }
   .masthead nav a:hover{color:var(--bone);border-bottom-color:var(--amber)}
-
   /* ---------- hero ---------- */
   .hero{padding:clamp(60px,11vw,140px) var(--gut) clamp(56px,9vw,110px);border-top:0}
   .hero h1{
@@ -89,7 +84,6 @@
     margin:0 0 clamp(34px,5vw,54px);
   }
   .role b{color:var(--bone);font-weight:500}
-
   .diff{
     border-left:3px solid var(--line);padding-left:clamp(14px,2.4vw,26px);
     margin:0 0 clamp(30px,4vw,42px);
@@ -104,7 +98,6 @@
   .diff .out{color:var(--del)}
   .diff .out .txt{opacity:.62;text-decoration:line-through;text-decoration-thickness:1px}
   .diff .in{color:var(--add)}
-
   .lede{
     max-width:58ch;font-size:clamp(15px,2vw,18px);color:#C9CFC6;
     margin:0 0 clamp(28px,4vw,38px);
@@ -116,7 +109,6 @@
   .lede-2::before{
     content:"";position:absolute;top:0;left:0;width:42px;height:2px;background:var(--amber);
   }
-
   .company{
     font-family:var(--mono);font-size:clamp(13px,1.7vw,15px);color:var(--amber);
     letter-spacing:.02em;margin:0 0 20px;
@@ -136,7 +128,6 @@
     line-height:1.1;letter-spacing:-.01em;margin:0;
   }
   .edu-degree .where{font-family:var(--mono);font-size:12.5px;color:var(--mute)}
-
   /* ---------- skills / working set ---------- */
   .skills{
     list-style:none;margin:0;padding:0;display:grid;
@@ -155,8 +146,6 @@
   .mono-us{font-size:19px;align-content:start;padding-top:11px}
   .skill-name{font-family:var(--mono);font-size:13.5px;font-weight:500;color:var(--bone)}
   .skill-note{font-size:13px;line-height:1.45;color:var(--mute);margin:0}
-
-
   /* pointer devices only — stops hover sticking after a tap */
   @media (hover:hover){
     .skill:hover{border-color:var(--amber);transform:translateY(-3px)}
@@ -164,7 +153,6 @@
     .vid-frame:hover .vid-play{background:var(--amber)}
     .vid-frame:hover .vid-play::after{border-left-color:var(--petrol)}
   }
-
   /* ---------- releases ---------- */
   .releases-grid{display:grid;grid-template-columns:150px 1fr;gap:clamp(24px,5vw,64px)}
   .spine{position:sticky;top:96px;align-self:start}
@@ -182,7 +170,6 @@
   .spine li.is-active::before{background:var(--amber);transform:scale(1.35)}
   .spine li.is-active a{color:var(--bone)}
   .spine a:hover{color:var(--bone)}
-
   .release{padding-bottom:clamp(48px,7vw,78px)}
   .release:last-child{padding-bottom:0}
   .release-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px 14px;margin-bottom:14px}
@@ -198,7 +185,6 @@
     margin:0 0 7px;
   }
   .summary{max-width:60ch;color:#C4CCC4;margin:0 0 22px}
-
   .changes{list-style:none;margin:0 0 22px;padding:0;font-family:var(--mono);font-size:13.5px}
   .changes li{
     display:flex;gap:.85em;padding:5px 0;border-bottom:1px dashed rgba(32,70,77,.75);line-height:1.5;
@@ -209,14 +195,12 @@
   .changes .c .k{color:var(--amber)}
   .changes .r .k{color:var(--del)}
   .changes .txt{color:#CBD3CA}
-
   .builtwith{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
   .chip{
     font-family:var(--mono);font-size:11.5px;color:var(--mute);
     background:var(--petrol-2);border:1px solid var(--line);border-radius:3px;padding:5px 10px;
   }
   .chip b{color:var(--bone);font-weight:600}
-
   .links{display:flex;flex-wrap:wrap;gap:20px}
   .links a{
     font-family:var(--mono);font-size:12.5px;text-decoration:none;color:var(--bone);
@@ -224,8 +208,6 @@
   }
   .links a:hover{border-bottom-color:var(--amber)}
   .links a::after{content:" ↗";color:var(--mute)}
-
-
   /* ---------- contact ---------- */
   .contact h2{
     font-family:var(--display);font-weight:800;font-stretch:118%;
@@ -238,11 +220,12 @@
     border-bottom:1px solid var(--line);padding-bottom:3px;
   }
   .contact-links a:hover{border-bottom-color:var(--amber)}
+  .contact-links a.cv{color:var(--amber);border-bottom-color:rgba(240,179,65,.45)}
+  .contact-links a.cv:hover{border-bottom-color:var(--amber)}
   .colophon{
     display:flex;flex-wrap:wrap;gap:6px 22px;font-family:var(--mono);
     font-size:11px;color:var(--mute);border-top:1px solid var(--line);padding-top:20px;
   }
-
   /* ---------- showcase ---------- */
   .videos{
     list-style:none;margin:0;padding:0;display:grid;
@@ -274,7 +257,6 @@
   }
   .vid-title a:hover{border-bottom-color:var(--amber)}
   .vid-title a::after{content:" ↗";color:var(--mute)}
-
   /* ---------- awards ---------- */
   .awards{list-style:none;margin:0;padding:0;max-width:760px}
   .awards li{
@@ -287,7 +269,6 @@
   }
   .awards .what{font-size:clamp(15px,2vw,17px);color:var(--bone)}
   .awards .who{font-family:var(--mono);font-size:12px;color:var(--mute);margin-left:auto}
-
   /* ---------- motion ---------- */
   .rise{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
   .rise.shown{opacity:1;transform:none}
@@ -295,13 +276,11 @@
   .diff p:nth-child(1){animation-delay:.12s}
   .diff p:nth-child(2){animation-delay:.30s}
   @keyframes slidein{from{opacity:0;transform:translateX(-10px)}to{opacity:1;transform:none}}
-
   /* large screens: let the grid breathe rather than stretch */
   @media (min-width:1500px){
     .wrap{max-width:1320px}
     .videos{grid-template-columns:repeat(4,1fr)}
   }
-
   /* tablet */
   @media (max-width:860px){
     .releases-grid{grid-template-columns:1fr;gap:0}
@@ -321,16 +300,13 @@
     .masthead nav{gap:13px}
     .masthead nav a{font-size:11px}
     section[id]{scroll-margin-top:64px}
-
     .hero{padding-top:clamp(44px,9vw,70px)}
     .role{margin-bottom:26px}
     .lede{font-size:15.5px;margin-bottom:22px}
-
     .skills{grid-template-columns:repeat(2,1fr);gap:10px}
     .skill{padding:14px;gap:9px}
     .monotile{width:40px;height:40px;font-size:13px}
     .skill-name{font-size:12.5px}
-
     .release h3{font-size:21px}
     .company{font-size:12.5px;margin-bottom:16px}
     .release{padding-bottom:42px}
@@ -338,25 +314,20 @@
     .builtwith,.links{gap:7px}
     .chip{font-size:11px;padding:4px 9px}
     .release-head{gap:6px 10px}
-
     .awards li{gap:2px 14px;padding:13px 0}
     .awards .yr{width:44px}
     .awards .what{font-size:15px}
     .awards .who{margin-left:0;width:100%;padding-left:58px}
-
     .edu-degree{display:block}
     .edu-degree .where{display:block;margin-top:8px}
-
     .videos{grid-template-columns:1fr;gap:20px}
     .contact h2{font-size:clamp(32px,11vw,52px)}
   }
-
   /* very small phones */
   @media (pointer:coarse){
     .links a,.contact-links a,.vid-title a{padding-top:6px;padding-bottom:6px;display:inline-block}
     .spine a{padding:4px 0}
   }
-
   @media (max-width:370px){
     .masthead nav{gap:11px}
     .masthead nav a{font-size:10.5px}
@@ -364,7 +335,6 @@
     .diff{padding-left:12px}
     .awards .who{padding-left:0}
   }
-
   @media (prefers-reduced-motion:reduce){
     html{scroll-behavior:auto}
     *,*::before,*::after{animation:none!important;transition:none!important}
@@ -373,7 +343,6 @@
 </style>
 </head>
 <body>
-
 <header class="masthead">
   <div class="wrap masthead-in">
     <a class="mark" href="#top"><span class="mark-long">MARC<span class="d">.</span>MANALANG</span><span class="mark-short">M<span class="d">.</span>M</span></a>
@@ -387,101 +356,82 @@
     </nav>
   </div>
 </header>
-
 <main id="top">
-
   <!-- HERO -->
   <section class="wrap hero band">
     <p class="eyebrow">Changelog — frontend development</p>
     <h1>Marc Angelo<br>Manalang</h1>
     <p class="role">frontend developer &nbsp;/&nbsp; <b>10+ years</b> &nbsp;/&nbsp; responsive web content</p>
-
     <div class="diff">
       <p class="out"><span class="sign">−</span><span class="txt">screens that only work in the mockup</span></p>
       <p class="in"><span class="sign">+</span><span class="txt">interfaces that hold up in the browser</span></p>
     </div>
-
     <p class="lede">A frontend developer with more than 10 years of experience specializing in creating clean, effective HTML and web contents. Love to build user-friendly, responsive contents that blend structure with creativity.</p>
     <p class="lede lede-2">Proven success through creativity, logical reasoning, and passion.</p>
-
   </section>
-
   <!-- STACK — logo thumbnails -->
   <section class="band" id="stack">
     <div class="wrap">
       <p class="eyebrow">Working set — what I build with</p>
       <ul class="skills">
-
         <li class="skill">
           <span class="monotile" role="img" aria-label="HTML5 logo" style="background:#E44D26">H5</span>
           <span class="skill-name">HTML5</span>
           <p class="skill-note">Semantic structure and accessible markup as the starting point, not the cleanup.</p>
         </li>
-
         <li class="skill">
           <span class="monotile" role="img" aria-label="CSS3 logo" style="background:#1572B6">C3</span>
           <span class="skill-name">CSS3</span>
           <p class="skill-note">Responsive layout, animation, and design systems that stay predictable as they grow.</p>
         </li>
-
         <li class="skill">
           <span class="monotile" role="img" aria-label="JavaScript logo" style="background:#B8A400">JS</span>
           <span class="skill-name">JavaScript</span>
           <p class="skill-note">The through-line for everything else here — plain ES first, libraries only when they earn it.</p>
         </li>
-
         <li class="skill">
           <span class="monotile" role="img" aria-label="jQuery logo" style="background:#0769AD">jQ</span>
           <span class="skill-name">jQuery</span>
           <p class="skill-note">Comfortable in the long-lived codebases that still run on it, and in migrating them out.</p>
         </li>
-
         <li class="skill">
           <span class="monotile" role="img" aria-label="WalkMe logo" style="background:#0094D4">WM</span>
           <span class="skill-name">WalkMe</span>
           <p class="skill-note">In-app walkthroughs, onboarding flows, and custom JavaScript inside the platform.</p>
         </li>
-
         <li class="skill">
           <span class="monotile" role="img" aria-label="Phaser logo" style="background:#2E7FA8">PH</span>
           <span class="skill-name">Phaser.js</span>
           <p class="skill-note">Browser games and interactive canvas work — sprites, scenes, physics, input.</p>
         </li>
-
         <li class="skill">
           <span class="monotile" role="img" aria-label="Node.js logo" style="background:#539E43">ND</span>
           <span class="skill-name">Node.js</span>
           <p class="skill-note">Build tooling, local dev servers, and small APIs behind the front end.</p>
         </li>
-
         <li class="skill">
           <span class="monotile" role="img" aria-label="Zepto.js logo" style="background:#C93A3A">ZP</span>
           <span class="skill-name">ZeptoJS</span>
           <p class="skill-note">jQuery-compatible API at a fraction of the weight, for mobile-first builds.</p>
         </li>
-
         <li class="skill">
           <span class="monotile mono-us" role="img" aria-label="Underscore.js logo" style="background:#0E76BC">_</span>
           <span class="skill-name">Underscore.js</span>
           <p class="skill-note">Data shaping and templating — the utility belt under a lot of Backbone work.</p>
         </li>
-
         <li class="skill">
           <span class="monotile" role="img" aria-label="Backbone.js logo" style="background:#0071B5">BB</span>
           <span class="skill-name">Backbone.js</span>
           <p class="skill-note">Models, views, and routing in applications that have been running for years.</p>
         </li>
-
         <li class="skill">
           <span class="monotile" role="img" aria-label="Claude logo" style="background:#C15F3C">CC</span>
           <span class="skill-name">Claude Code</span>
           <p class="skill-note">Refactors, test coverage, and repetitive migration work — reviewed line by line.</p>
         </li>
-
       </ul>
     </div>
   </section>
-
   <!-- WORK -->
   <section class="band" id="work">
     <div class="wrap releases-grid">
@@ -496,9 +446,7 @@
           <li data-spine="r-infor"><a href="#r-infor">v0.1.0<span class="tick">Infor PSSC</span></a></li>
         </ol>
       </div>
-
       <div class="release-list">
-
         <article class="release rise" id="r-digiplus">
           <div class="release-head"><span class="tag">v6.0.0</span><span class="date">06/2025 — present</span></div>
           <h3>Frontend / Playables Developer</h3>
@@ -517,7 +465,6 @@
             <span class="chip">Built with <b>Claude</b></span>
           </div>
         </article>
-
         <article class="release rise" id="r-arcadis">
           <div class="release-head"><span class="tag">v5.0.0</span><span class="date">04/2021 — 05/2025</span></div>
           <h3>Digital Adoption Platform Developer</h3>
@@ -535,7 +482,6 @@
             <span class="chip">Built with <b>JavaScript & jQuery</b></span>
           </div>
         </article>
-
         <article class="release rise" id="r-esports">
           <div class="release-head"><span class="tag">v4.0.0</span><span class="date">08/2020 — 04/2021</span></div>
           <h3>Esports Freelancer</h3>
@@ -549,7 +495,6 @@
             <span class="chip">Built with <b>After Effects</b></span>
           </div>
         </article>
-
         <article class="release rise" id="r-accenture">
           <div class="release-head"><span class="tag">v3.0.0</span><span class="date">11/2016 — 08/2020</span></div>
           <h3>Digital Content Management Analyst</h3>
@@ -568,7 +513,6 @@
             <span class="chip">Built with <b>Illustrator</b></span>
           </div>
         </article>
-
         <article class="release rise" id="r-wideout">
           <div class="release-head"><span class="tag">v2.0.0</span><span class="date">10/2015 — 10/2016</span></div>
           <h3>Sr. Creative Developer</h3>
@@ -583,7 +527,6 @@
             <span class="chip">Built with <b>JavaScript</b></span>
           </div>
         </article>
-
         <article class="release rise" id="r-infor">
           <div class="release-head"><span class="tag">v0.1.0</span><span class="date">2014 · internship, 600 hours</span></div>
           <h3>Jr. Developer</h3>
@@ -599,11 +542,9 @@
             <span class="chip">Built with <b>JavaScript</b></span>
           </div>
         </article>
-
       </div>
     </div>
   </section>
-
   <!-- AWARDS -->
   <section class="band" id="awards">
     <div class="wrap">
@@ -619,7 +560,6 @@
       </ul>
     </div>
   </section>
-
   <!-- EDUCATION & THESIS -->
   <section class="band" id="education">
     <div class="wrap">
@@ -628,7 +568,6 @@
         <h3>BS Information Technology</h3>
         <span class="where">Far Eastern University — Makati &nbsp;·&nbsp; 2011 — 2015</span>
       </div>
-
       <div class="releases-grid">
         <p class="eyebrow">Key project</p>
         <article class="release rise">
@@ -644,7 +583,6 @@
       </div>
     </div>
   </section>
-
   <!-- SHOWCASE -->
   <section class="band" id="showcase">
     <div class="wrap">
@@ -705,7 +643,6 @@
       </ul>
     </div>
   </section>
-
   <section class="band contact" id="contact">
     <div class="wrap">
       <p class="eyebrow">Next release</p>
@@ -713,20 +650,17 @@
       <div class="contact-links">
         <a href="mailto:marc.a.manalang@gmail.com">marc.a.manalang@gmail.com</a>
         <a href="https://www.linkedin.com/in/gelomanalang/" target="_blank" rel="noopener">linkedin.com/in/gelomanalang</a>
-        <!-- Optional: add a GitHub link or CV download here in the same format -->
+        <a class="cv" href="Marc_Angelo_Manalang_CV.pdf" download>Download CV (PDF)</a>
       </div>
       <div class="colophon">
         <span>© 2026 Marc Angelo Manalang</span>
       </div>
     </div>
   </section>
-
 </main>
-
 <script>
 (function(){
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
   // Video slots: show the YouTube thumbnail, swap in the player on click
   document.querySelectorAll('.vid-frame').forEach(function(btn){
     var id = btn.dataset.yt || '';
@@ -750,7 +684,6 @@
       btn.replaceWith(f);
     });
   });
-
   // Reveal project entries on scroll
   if (!reduce && 'IntersectionObserver' in window) {
     var reveal = new IntersectionObserver(function(entries){
@@ -762,11 +695,9 @@
   } else {
     document.querySelectorAll('.rise').forEach(function(el){ el.classList.add('shown'); });
   }
-
   // Highlight the matching version on the spine
   var items = {};
   document.querySelectorAll('[data-spine]').forEach(function(li){ items[li.dataset.spine] = li; });
-
   if ('IntersectionObserver' in window) {
     var spy = new IntersectionObserver(function(entries){
       entries.forEach(function(e){
